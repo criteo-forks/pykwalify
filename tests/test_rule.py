@@ -69,6 +69,9 @@ class TestRule(unittest.TestCase):
     def test_desc_value(self):
         pass
 
+    def test_example_value(self):
+        pass
+
     def test_required_value(self):
         # Test that required value must be bool otherwise exception is raised
         with pytest.raises(RuleError) as r:

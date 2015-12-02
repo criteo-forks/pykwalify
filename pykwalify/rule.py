@@ -29,6 +29,7 @@ class Rule(object):
         self._parent = None
         self._name = None
         self._desc = None
+        self._example = None
         self._required = False
         self._type = None
         self._type_class = None
@@ -112,6 +113,7 @@ class Rule(object):
             "type": lambda x, y, z: (),
             "name": self.init_name_value,
             "desc": self.init_desc_value,
+            "example": self.init_desc_value,
             "required": self.init_required_value,
             "req": self.init_required_value,
             "pattern": self.init_pattern_value,
@@ -239,6 +241,11 @@ class Rule(object):
         log.debug(u"Init descr value : {}".format(path))
 
         self._desc = str(v)
+
+    def init_example_value(self, v, rule, path):
+        log.debug(u"Init example value : {}".format(path))
+
+        self._example = str(v)
 
     def init_required_value(self, v, rule, path):
         log.debug(u"Init required value : {}".format(path))
